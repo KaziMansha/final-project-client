@@ -34,7 +34,7 @@ class CampusContainer extends Component {
   // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     if (this.state.redirect) {
-      return <Redirect to = "/campuses"/>;
+      return <Redirect to="/campuses" />;
     }
     return (
       <div>

@@ -27,8 +27,8 @@ class CampusContainer extends Component {
   }
 
   handleDelete = async (event) => {
-    await this.props.deleteCampus(this.props.campusId);
-    this.setState({ redirect: true })
+    await this.props.deleteCampus(this.props.campus.id);
+    this.setState({ redirect: true });
   }
 
   // Render a Campus view by passing campus data as props to the corresponding View component
@@ -59,7 +59,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId))
+    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId)),
   };
 };
 

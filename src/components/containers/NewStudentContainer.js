@@ -57,7 +57,7 @@ class NewStudentContainer extends Component {
         lastname: "", 
         campusId: null, 
         redirect: true, 
-        redirectId: newStudent.id
+        redirectId: newStudent ? newStudent.id : null
       });
     }
     catch (err){

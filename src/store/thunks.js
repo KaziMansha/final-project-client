@@ -80,6 +80,7 @@ export const fetchAllStudentsThunk = () => async (dispatch) => {  // The THUNK
 // THUNK CREATOR:
 export const addStudentThunk = (student) => async (dispatch) => {  // The THUNK
   try {
+    console.log("TEST");
     // API "post" call to add "student" object's data to database
     let res = await axios.post(`/api/students`, student);  
     // Call Action Creator to return Action object (type + payload with new students data)

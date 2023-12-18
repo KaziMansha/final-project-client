@@ -20,9 +20,6 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "",
-      email: "",
-      studentImg: "",
-      gpa: 0.0,
       campusId: null, 
       redirect: false, 
       redirectId: null
@@ -53,16 +50,20 @@ class NewStudentContainer extends Component {
       let newStudent = await this.props.addStudent(student);
 
     // Update state, and trigger redirect to show the new student
-    this.setState({
-      firstname: "", 
-      lastname: "",
-      email: "",
-      studentImg: "",
-      gpa: 0.0,
-      campusId: null, 
-      redirect: true, 
-      redirectId: newStudent ? newStudent.id : null
-    });
+
+    try{
+      this.setState({
+        firstname: "", 
+        lastname: "", 
+        campusId: null, 
+        redirect: true, 
+        redirectId: newStudent.id
+      });
+    }
+    catch (err){
+      console.log(err);
+      alert("Please enter correct information");
+    }
   }
 
   // Unmount when the component is being removed from the DOM:

@@ -59,11 +59,6 @@ const EditCampusView = (props) => {
                         <br/>
                         <br/>
 
-                        <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Image: </label>
-                        <input type="text" name="description" onChange={(e) => handleChange(e)} />
-                        <br/>
-                        <br/>
-
                         <Button variant="contained" color="primary" type="submit">
                             Submit Your Changes!
                         </Button>

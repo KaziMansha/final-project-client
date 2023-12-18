@@ -53,7 +53,7 @@ export const deleteCampusThunk = (campusId) => async (dispatch) => {
   }
 }
 
-export const editCampusThunk = (campus) => async dispatch => { 
+export const editCampusThunk = (campus) => async (dispatch) => { 
   try {
     let updatedCampus = await axios.put(`/api/campuses/${campus.id}`, campus); 
     dispatch(ac.editCampus(updatedCampus));
@@ -93,7 +93,7 @@ export const addStudentThunk = (student) => async (dispatch) => {  // The THUNK
 
 // Delete Student
 // THUNK CREATOR:
-export const deleteStudentThunk = studentId => async dispatch => {  // The THUNK
+export const deleteStudentThunk = (studentId) => async (dispatch) => {  // The THUNK
   try {
     // API "delete" call to delete student (based on "studentID") from database
     await axios.delete(`/api/students/${studentId}`);  
@@ -106,7 +106,7 @@ export const deleteStudentThunk = studentId => async dispatch => {  // The THUNK
 
 // Edit Student
 // THUNK CREATOR:
-export const editStudentThunk = student => async dispatch => {  // The THUNK
+export const editStudentThunk = (student) => async (dispatch) => {  // The THUNK
   try {
     // API "put" call to update student (based on "id" and "student" object's data) from database
     let updatedStudent = await axios.put(`/api/students/${student.id}`, student); 
@@ -119,7 +119,7 @@ export const editStudentThunk = student => async dispatch => {  // The THUNK
 
 // Single Student
 // THUNK CREATOR:
-export const fetchStudentThunk = id => async dispatch => {  // The THUNK
+export const fetchStudentThunk = (id) => async (dispatch) => {  // The THUNK
   try {
     // API "get" call to get a specific student (based on "id") data from database
     let res = await axios.get(`/api/students/${id}`);  

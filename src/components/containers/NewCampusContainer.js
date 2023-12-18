@@ -14,8 +14,6 @@ class NewCampusContainer extends Component {
       name: "",
       address: "",
       description: "",
-      campusImg: "",
-      campusId: null,
       redirect: false, 
       redirectId: null
     };
@@ -43,15 +41,20 @@ class NewCampusContainer extends Component {
     let newCampus = await this.props.addCampus(campus);
 
     // Update state, and trigger redirect to show the new campus
+    try {
     this.setState({
       name: "",
       address: "",
       description: "",
-      campusImg: "",
       redirect: true, 
       redirectId: newCampus ? newCampus.id : null
     });
   }
+  catch (err) {
+    console.error(err);
+    alert("Provide correct information");
+  }
+}
 
   // Unmount when the component is being removed from the DOM:
   componentWillUnmount() {

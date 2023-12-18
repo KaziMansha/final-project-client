@@ -73,6 +73,7 @@ class NewStudentContainer extends Component {
       <div>
         <Header />
         <NewStudentView 
+          campusId = {this.props.location.query}
           handleChange = {this.handleChange} 
           handleSubmit={this.handleSubmit}      
         />

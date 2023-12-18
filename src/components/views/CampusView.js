@@ -8,11 +8,12 @@ import { Link } from "react-router-dom";
 
 // Take in props data to construct the component
 const CampusView = (props) => {
-  const {campus} = props;
+  const {campus, handleDelete} = props;
   
   // Render a single Campus view with list of its students
   return (
     <div>
+      <img src= {campus.campusImg} style={{width: '50%', height: 'auto', objectFit: 'scale-down'}} alt=""></img>
       <h1>{campus.name}</h1>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
@@ -26,6 +27,7 @@ const CampusView = (props) => {
           </div>
         );
       })}
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };

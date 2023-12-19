@@ -47,7 +47,7 @@ class NewCampusContainer extends Component {
       address: "",
       description: "",
       redirect: true, 
-      redirectId: newCampus ? newCampus.id : null
+      redirectId: newCampus.id
     });
   }
   catch (err) {

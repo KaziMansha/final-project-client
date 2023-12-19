@@ -40,7 +40,7 @@ class CampusContainer extends Component {
     };
     await this.props.deleteStudent(student);
     this.setState({ redirect: false});
-    this.props.fetchCampus(this.props.id);
+    this.props.fetchCampus(this.props.campus.id);
   }
 
   // Render a Campus view by passing campus data as props to the corresponding View component
